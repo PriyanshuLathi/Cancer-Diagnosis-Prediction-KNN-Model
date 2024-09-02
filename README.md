@@ -1,37 +1,36 @@
-# Cancer Diagnosis Prediction KNN Model
+# Cancer Diagnosis Prediction Model
 
-This project aims to predict whether a tumor is malignant or benign using the K-Nearest Neighbour (KNN) algorithm. The model is trained on a dataset containing various tumor characteristics, including radius, texture, perimeter, and area. The primary goal is to classify tumors accurately based on these features.
+This project aims to predict whether a tumor is malignant or benign using three different algorithms: K-Nearest Neighbour (KNN), Support Vector Machine (SVM), and Decision Tree. Each model is trained on a dataset containing various tumor characteristics, including radius, texture, perimeter, and area. The primary goal is to classify tumors accurately based on these features and compare the performance of each model.
 
 ## Dataset Description
 
-The dataset used in this project is designed to classify breast cancer tumors as malignant (cancerous) or benign (non-cancerous) based on various features derived from digitized images of fine needle aspirates (FNA) of breast masses. The dataset contains 569 samples with 33 features, including the target variable. Below is a detailed breakdown of the dataset:
+The dataset used in this project classifies breast cancer tumors as malignant (cancerous) or benign (non-cancerous) based on features derived from digitized images of fine needle aspirates (FNA) of breast masses. The dataset contains 569 samples with 33 features, including the target variable. Below is a detailed breakdown of the dataset:
 
-- Number of Samples: 569
-- Number of Features: 33 (including the target variable)
-- Target Variable: diagnosis - Indicates the diagnosis of the tumor (M for malignant, B for benign).
+- **Number of Samples:** 569
+- **Number of Features:** 33 (including the target variable)
+- **Target Variable:** Diagnosis - Indicates the diagnosis of the tumor (M for malignant, B for benign).
 
 ## Features
 
-The features in the dataset are computed from a digitized image of a fine needle aspirate of a breast mass. They describe characteristics of the cell nuclei present in the image. The features are grouped into three main types based on their statistical properties:
+The features in the dataset describe characteristics of the cell nuclei present in the image, grouped into three main types based on their statistical properties:
 
-- Mean Values: Average measurements of each feature.
-- Standard Error: Variability of the measurements.
-- Worst Values: The largest (mean of the three largest values) measurements.
+- **Mean Values:** Average measurements of each feature.
+- **Standard Error:** Variability of the measurements.
+- **Worst Values:** The largest measurements.
 
-## Key Features:
-
-- ID: Unique identifier for each sample.
-- Diagnosis: Target variable (M = malignant, B = benign).
-- Radius (mean, standard error, worst): Mean of distances from the center to points on the perimeter.
-- Texture (mean, standard error, worst): Standard deviation of gray-scale values.
-- Perimeter (mean, standard error, worst): Perimeter of the tumor.
-- Area (mean, standard error, worst): Area of the tumor.
-- Smoothness (mean, standard error, worst): Local variation in radius lengths.
-- Compactness (mean, standard error, worst): Perimeter^2 / area - 1.0.
-- Concavity (mean, standard error, worst): Severity of concave portions of the contour.
-- Concave Points (mean, standard error, worst): Number of concave portions of the contour.
-- Symmetry (mean, standard error, worst): Symmetry of the tumor shape.
-- Fractal Dimension (mean, standard error, worst): Coastline approximation - 1.
+### Key Features:
+- **ID:** Unique identifier for each sample.
+- **Diagnosis:** Target variable (M = malignant, B = benign).
+- **Radius (mean, standard error, worst)**
+- **Texture (mean, standard error, worst)**
+- **Perimeter (mean, standard error, worst)**
+- **Area (mean, standard error, worst)**
+- **Smoothness (mean, standard error, worst)**
+- **Compactness (mean, standard error, worst)**
+- **Concavity (mean, standard error, worst)**
+- **Concave Points (mean, standard error, worst)**
+- **Symmetry (mean, standard error, worst)**
+- **Fractal Dimension (mean, standard error, worst)**
 
 ## Handling Missing Values
 
@@ -39,38 +38,39 @@ The dataset was checked for missing values, which were addressed during the prep
 
 ## Data Normalization
 
-Features were normalized to bring them into a similar range, improving the performance and convergence of the KNN model.
-
-## Class Distribution
-
-- Malignant (M): Represents cancerous tumors.
-- Benign (B): Represents non-cancerous tumors.
+Features were normalized to bring them into a similar range, improving the performance and convergence of the models.
 
 ## Methodology
 
-The following steps were followed to build and evaluate the model:
+The following steps were followed to build and evaluate the models:
 
-1. **Data Loading and Preprocessing**: The dataset was loaded using Pandas. Basic preprocessing steps like handling missing values, encoding categorical variables, and feature scaling were applied where necessary.
+1. **Data Loading and Preprocessing:** The dataset was loaded using Pandas. Basic preprocessing steps like handling missing values, encoding categorical variables, and feature scaling were applied where necessary.
 
-2. **Feature Selection**: Relevant features that significantly influence house prices were selected. Feature importance analysis and correlation heatmaps were used to guide the selection.
+2. **Feature Selection:** Relevant features that significantly influence tumor classification were selected using feature importance analysis and correlation heatmaps.
 
-3. **Model Training**: The KNN model was trained using the Scikit-learn library. The data was split into training and testing sets to ensure unbiased evaluation.
+3. **Model Training and Evaluation:**
+    - **KNN Model:** The KNN algorithm was used to classify tumors based on their nearest neighbors in the feature space.
+    - **SVM Model:** SVM was implemented to find the optimal hyperplane that separates malignant and benign tumors.
+    - **Decision Tree Model:** This model used a tree-like structure to split the data into classes based on feature values.
 
-These metrics indicate a near-perfect model performance, with the R² score of 0.9177 demonstrating that the model explains all the variance in the target variable.
+## Model Performance
 
-## Accuracy and Model Performance
-
-The KNN model achieves an **accuracy of 95%**. This means the model perfectly predicts house prices based on the given features.
+- **KNN Model:**
+    - **Accuracy:** 95%
+- **SVM Model:**
+    - **Accuracy** 92%
+- **Decision Tree Model:**
+    - **Accuracy:** 95%
 
 ## Further Scope
 
-While the current KNN model achieves high accuracy in predicting tumor malignancy, there are several areas for potential improvement and further exploration:
+While the current models achieve high accuracy in predicting tumor malignancy, there are several areas for potential improvement:
 
-- **Feature Engineering**: Additional derived features or transformations could be explored to capture more complex patterns in the data, enhancing the model's performance.
-- **Model Generalization**: Testing the model on different datasets or new data can help evaluate its robustness and ability to generalize to unseen cases.
-- **Advanced Models**: Experimenting with more sophisticated algorithms like Support Vector Machines (SVM), Random Forests, or Neural Networks may capture non-linear relationships better and improve accuracy.
-- **Hyperparameter Optimization**: Fine-tuning hyperparameters using techniques such as Grid Search or Random Search can further enhance model performance.
-- **Real-World Applications**: Deploying the model as a web app or integrating it into a clinical decision-support tool can demonstrate its practicality and provide valuable real-time predictions for healthcare professionals.
+- **Feature Engineering:** Additional derived features or transformations could be explored to capture more complex patterns.
+- **Model Generalization:** Testing on different datasets or new data can evaluate robustness and generalization.
+- **Advanced Models:** Experimenting with algorithms like Random Forests or Neural Networks may improve accuracy.
+- **Hyperparameter Optimization:** Techniques like Grid Search or Random Search can fine-tune model performance.
+- **Real-World Applications:** Deploying the model as a web app or clinical decision-support tool can provide valuable real-time predictions.
 
 ## Dependencies
 
