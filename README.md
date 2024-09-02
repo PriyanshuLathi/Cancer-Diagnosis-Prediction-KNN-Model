@@ -58,7 +58,7 @@ The following steps were followed to build and evaluate the models:
 - **KNN Model:**
     - **Accuracy:** 95%
 - **SVM Model:**
-    - **Accuracy** 92%
+    - **Accuracy:** 92%
 - **Decision Tree Model:**
     - **Accuracy:** 95%
 
