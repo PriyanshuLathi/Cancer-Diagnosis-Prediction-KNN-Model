@@ -10,6 +10,8 @@ The dataset used in this project classifies breast cancer tumors as malignant (c
 - **Number of Features:** 33 (including the target variable)
 - **Target Variable:** Diagnosis - Indicates the diagnosis of the tumor (M for malignant, B for benign).
 
+<p align="center"> <img src="https://github.com/user-attachments/assets/a0d55b0e-2ed4-4f95-b7b1-ac4ad27e69fa" alt="Cancer Diagnosis Model" width = 1000 /> </p>
+
 ## Features
 
 The features in the dataset describe characteristics of the cell nuclei present in the image, grouped into three main types based on their statistical properties:
@@ -57,10 +59,19 @@ The following steps were followed to build and evaluate the models:
 
 - **KNN Model:**
     - **Accuracy:** 95%
+
+<p align="center"> <img src="https://github.com/user-attachments/assets/fea00330-8c92-401a-8118-5a20ca4fdf23" alt="Cancer Diagnosis Model" width = 750 /> </p>
+
 - **SVM Model:**
     - **Accuracy:** 92%
+
+<p align="center"> <img src="https://github.com/user-attachments/assets/e6350bd3-8e56-459c-8809-26917614b723" alt="Cancer Diagnosis Model" width = 750 /> </p>
+
 - **Decision Tree Model:**
     - **Accuracy:** 95%
+
+<p align="center"> <img src="https://github.com/user-attachments/assets/dd4f8d4f-3a6f-4690-b5fb-44f3c8392e88" alt="Cancer Diagnosis Model" width = 750 /> </p>
+
 
 ## Further Scope
 
